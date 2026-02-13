@@ -1,0 +1,208 @@
+import React from 'react'
+import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCircleArrowRight, faClipboardList, faDog, faHeart, faPhone } from '@fortawesome/free-solid-svg-icons';
+import { faPaypal, faSistrix } from '@fortawesome/free-brands-svg-icons';
+import { getRandomDogs } from '../services/dogApi';
+import '../css/home.css';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+
+const Home = () => {
+  const [dogs, setDogs] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    getRandomDogs(3).then((data) => {
+      setDogs(data);
+      setLoading(false);
+    })
+  }, [])
+
+  const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+
+  if (loading) {
+    return <div>Loading...</div>
+  }
+
+  return (
+    <main >
+      <div className='tw-bg-[linear-gradient(to_bottom_right,#faffff_55%,#faffff_65%,#9999ff)]'>
+
+        <div className='desktop-home'>
+
+          {/*Hero section*/}
+          <div className='tw-mx-4'>
+            <p className='desktop-home-nonprofit tw-inline-flex tw-my-6 tw-items-center tw-rounded-full tw-bg-[#cd1c18]/10 tw-text-[#cc0000] tw-py-2 tw-px-5'>
+              <FontAwesomeIcon icon={faHeart} className=' tw-mr-1' />
+              Foster-based Nonprofit
+            </p>
+            <h1 className='desktop-home-forever tw-text-4xl tw-font-bold'>
+              Because <span className='tw-text-[#878787]'>Forgotten</span> Should Not Be <span className='tw-text-[#cd1c18]'>Forever</span>
+            </h1>
+            <p className='desktop-home-hero-p tw-font-light tw-text-lg tw-mt-6'>
+              We rescue, rehabilitate, and re-home homeless dogs in San Diego and surrounding communities, providing essential medical care and loving foster homes until they find their forever families.
+            </p>
+
+            {/*Hero CTAs*/}
+            <div className='desktop-home-hero-cta tw-flex tw-flex-col tw-items-center'>
+              <Link to='/dogs' onClick={scrollToTop} className='desktop-home-hero-button tw-inline-flex tw-items-center tw-justify-center tw-rounded-full tw-mt-8 tw-mb-4 tw-w-[16rem] tw-py-2 tw-bg-[#cd1c18] tw-text-white'>
+                Meet Our Dogs <FontAwesomeIcon icon={faCircleArrowRight} className='tw-ml-1' />
+              </Link>
+              <Link to='/volunteer' onClick={scrollToTop} className='desktop-home-hero-button tw-inline-flex tw-justify-center tw-rounded-full tw-w-[16rem] tw-mb-16 tw-py-2 tw-border tw-border-black'>
+                Become a Foster
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/*Adoption Process*/}
+      <section>
+        <div className='desktop-home desktop-home-adoption tw-my-8 tw-px-4 tw-flex tw-flex-col tw-items-center'>
+          <h1 className='tw-text-4xl tw-font-bold tw-text-center'>
+            Adoption Process
+          </h1>
+          <p className='tw-font-light tw-text-lg tw-mt-6'>
+            A second chance for a forgotten dog starts with these five simple steps.
+          </p>
+
+          <div className='desktop-home-adoption-grid'>
+            {/*Step 1: browse dog*/}
+            <div className='desktop-home-adoption-box tw-flex tw-flex-col tw-bg-[#9999ff]/70 tw-mt-8 tw-mb-3 tw-rounded-xl tw-relative tw-max-w-xs tw-w-full'>
+              <FontAwesomeIcon icon={faSistrix} className='tw-bg-[#faffff] tw-text-[#cd1c18] tw-p-1 tw-text-3xl tw-m-4' />
+              <h3 className='tw-text-2xl tw-font-bold tw-mx-4'>
+                Browse
+              </h3>
+              <p className='tw-mx-4 tw-pb-3'>
+                Online or at one of our adoption events.
+              </p>
+              <div className='tw-rounded-full tw-bg-[#cd1c18] tw-w-8 tw-h-8 tw-flex tw-justify-center tw-items-center tw-text-bold tw-text-[#faffff] tw-absolute tw-top-0 tw-left-0 tw--translate-x-1/2 tw--translate-y-1/2'>
+                1
+              </div>
+            </div>
+
+            {/*Step 2: apply */}
+            <div className='desktop-home-adoption-box tw-flex tw-flex-col tw-bg-[#9999ff]/60 tw-my-6 tw-rounded-xl tw-relative tw-max-w-xs tw-w-full'>
+              <FontAwesomeIcon icon={faClipboardList} className='tw-bg-[#faffff] tw-text-[#cd1c18] tw-p-1 tw-text-3xl tw-m-4' />
+              <h3 className='tw-text-2xl tw-font-bold tw-mx-4'>
+                Apply
+              </h3>
+              <p className='tw-mx-4 tw-pb-3'>
+                Apply for the dog you're interested in.
+              </p>
+              <div className='tw-rounded-full tw-bg-[#cd1c18] tw-w-8 tw-h-8 tw-flex tw-justify-center tw-items-center tw-text-bold tw-text-[#faffff] tw-absolute tw-top-0 tw-left-0 tw--translate-x-1/2 tw--translate-y-1/2'>
+                2
+              </div>
+            </div>
+
+            {/*Step 3: meet and greet*/}
+            <div className='desktop-home-adoption-box tw-flex tw-flex-col tw-bg-[#9999ff]/50 tw-my-6 tw-rounded-xl tw-relative tw-max-w-xs tw-w-full'>
+              <FontAwesomeIcon icon={faPhone} className='tw-bg-[#faffff] tw-text-[#cd1c18] tw-p-1 tw-text-3xl tw-m-4' />
+              <h3 className='tw-text-2xl tw-font-bold tw-mx-4'>
+                Follow Up (if applicable)
+              </h3>
+              <p className='tw-mx-4 tw-pb-3'>
+                We'll contact you to schedule any follow-up.
+              </p>
+              <div className='tw-rounded-full tw-bg-[#cd1c18] tw-w-8 tw-h-8 tw-flex tw-justify-center tw-items-center tw-text-bold tw-text-[#faffff] tw-absolute tw-top-0 tw-left-0 tw--translate-x-1/2 tw--translate-y-1/2'>
+                3
+              </div>
+            </div>
+
+            {/*Step 4: approval and paperwork*/}
+            <div className='desktop-home-adoption-box tw-flex tw-flex-col tw-bg-[#9999ff]/40 tw-my-6 tw-rounded-xl tw-relative tw-max-w-xs tw-w-full'>
+              <FontAwesomeIcon icon={faPaypal} className='tw-bg-[#faffff] tw-text-[#cd1c18] tw-p-1 tw-text-3xl tw-m-4' />
+              <h3 className='tw-text-2xl tw-font-bold tw-mx-4'>
+                Approval and Contract
+              </h3>
+              <p className='tw-mx-4 tw-pb-3'>
+                Pay the adoption fee and sign the adoption agreement.
+              </p>
+              <div className='tw-rounded-full tw-bg-[#cd1c18] tw-w-8 tw-h-8 tw-flex tw-justify-center tw-items-center tw-text-bold tw-text-[#faffff] tw-absolute tw-top-0 tw-left-0 tw--translate-x-1/2 tw--translate-y-1/2'>
+                4
+              </div>
+            </div>
+
+            {/*Step 5: forever*/}
+            <div className='desktop-home-adoption-box tw-flex tw-flex-col tw-bg-[#9999ff]/30 tw-my-2 tw-rounded-xl tw-relative tw-max-w-xs tw-w-full'>
+              <FontAwesomeIcon icon={faDog} className='tw-bg-[#faffff] tw-text-[#cd1c18] tw-p-1 tw-text-3xl tw-m-4' />
+              <h3 className='tw-text-2xl tw-font-bold tw-mx-4'>
+                Forever Home
+              </h3>
+              <p className='tw-mx-4 tw-pb-3'>
+                Take your new BFF home and start forever together.
+              </p>
+              <div className='tw-rounded-full tw-bg-[#cd1c18] tw-w-8 tw-h-8 tw-flex tw-justify-center tw-items-center tw-text-bold tw-text-[#faffff] tw-absolute tw-top-0 tw-left-0 tw--translate-x-1/2 tw--translate-y-1/2'>
+                5
+              </div>
+            </div>
+          </div>
+
+          {/* Adoption Process CTA*/}
+          <Link to='/dogs' onClick={scrollToTop} className='tw-inline-flex tw-items-center tw-justify-center tw-rounded-full tw-mt-8 tw-mb-4 tw-w-[16rem] tw-py-3 tw-bg-[#cd1c18] tw-text-white hover:tw-bg-[#0000cc] hover:tw-text-[#ffff00]'>
+            Start that journey, Today <FontAwesomeIcon icon={faCircleArrowRight} className='tw-ml-1' />
+          </Link>
+        </div>
+      </section>
+
+      {/* Featured Dogs */}
+      <section>
+        <div className='tw-bg-[#9999ff]/30'>
+          <div className='desktop-home tw-pt-8 tw-px-4 tw-flex tw-flex-col tw-items-center'>
+
+            <h1 className='tw-text-3xl tw-font-bold tw-text-center tw-my-4'>
+              Meet Your New Best Friend
+            </h1>
+            <p className='tw-font-light tw-text-lg tw-my-6'>
+              These loving dogs are ready for their forever homes.
+            </p>
+
+            {/* Carousel */}
+            <div className='tw-w-full tw-overflow-hidden'>
+              <Swiper slidesPerView={1.15} centeredSlides={true} spaceBetween={16} >
+                {dogs.map((dog) => {
+
+                  const { id, attributes } = dog;
+                  const {
+                    pictureThumbnailUrl,
+                    name,
+                    breedPrimary,
+                    ageString
+                  } = attributes;
+
+                  return (
+                    <SwiperSlide key={id}>
+                      <div className='tw-rounded-lg tw-overflow-hidden tw-max-w-xs tw-bg-[#faffff] '>
+                        <div className='tw-aspect-[4/3] tw-w-full'>
+                          {pictureThumbnailUrl && (
+                            <img src={pictureThumbnailUrl} alt="" className='tw-w-full tw-h-full tw-object-cover' />
+                          )}
+                        </div>
+
+                        <div>
+                          <h2>
+                            {name}
+                          </h2>
+                          <p>
+                            {breedPrimary}
+                          </p>
+                          <p>
+                            {ageString}
+                          </p>
+                        </div>
+                      </div>
+                    </SwiperSlide>
+                  )
+                })}
+              </Swiper>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  )
+}
+
+export default Home
