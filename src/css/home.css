@@ -1,0 +1,59 @@
+@media (min-width: 640px) {
+    
+    .desktop-home {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .desktop-home-nonprofit {
+        margin-top: 8rem;
+        
+    }
+
+    .desktop-home-forever {
+        max-width: 600px;
+        font-size: 3rem;
+        line-height: 3.5rem;
+    }
+
+    .desktop-home-hero-p {
+        max-width: 600px;
+        font-size: 1.25rem;
+    }
+
+    .desktop-home-hero-cta {
+        flex-direction: row;
+        align-items: center;
+        max-width: 600px;
+    }
+
+    .desktop-home-hero-button {
+        margin: 3rem 2rem 10rem 2rem;
+        width: 14rem;
+        padding: 1rem 2rem;
+    }
+
+    .desktop-home-hero-button:hover {
+        background-color: #0000cc;
+        color: #ffff00;
+    }
+
+    .desktop-home-adoption {
+        margin: 3rem auto;
+    }
+
+    .desktop-home-adoption-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 6px;
+    }
+
+    .desktop-home-adoption-box {
+        margin: 3rem 0;
+    }
+
+    .desktop-home-adoption-box:hover {
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
+
+}
