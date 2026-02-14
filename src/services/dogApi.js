@@ -24,6 +24,15 @@ export const getAllDogs = async () => {
   return cachedDogs;
 };
 
+// Helper function to replace picture id with one of the high res
+const generatePictureUrl = (templateUrl, newPicId) => {
+  if (!templateUrl || !newPicId) return templateUrl;
+
+  const newPicUrl = templateUrl.replace(/\/[^/]+\.jpg(\?.*)?$/, `/${newPicId}.jpg`);
+
+  return newPicUrl.split('?')[0];
+};
+
 export const getDogById = async (id) => {
   const dogs = await getAllDogs();
   return dogs.find((dog) => dog.id === id);
@@ -32,5 +41,17 @@ export const getDogById = async (id) => {
 export const getRandomDogs = async (count = 3) => {
   const dogs = await getAllDogs();
   const shuffled = [...dogs].sort(() => 0.5 - Math.random());
-  return shuffled.slice(0, count);
+
+  const selected = shuffled.slice(0, count);
+  return selected.map((dog) => {
+    const newPicId = dog.relationships.pictures.data[0].id;
+
+    return {
+      ...dog,
+      attributes: {
+        ...dog.attributes,
+        pictureThumbnailUrl : generatePictureUrl(dog.attributes.pictureThumbnailUrl, newPicId),
+      }
+    };
+  });
 };
