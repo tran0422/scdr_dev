@@ -67,7 +67,7 @@ const Footer = () => {
           <a className='tw-text-sm tw-rounded-full tw-bg-[#1591ea]/60 hover:tw-bg-white hover:tw-text-[#0000cc] tw-px-3 tw-py-1' href="https://sites.google.com/secondchancedogrescue.org/intranet" target='_blank' rel='noopener noreferrer'>
             Staff login
           </a>
-          <div className='tw-py-4 tw-text-xs tw-flex tw-justify-between'>
+          <div className='tw-py-4 tw-text-[10px] tw-flex tw-justify-between'>
             <p >
               <FontAwesomeIcon icon={faCopyright} /> {currentYr} Second Chance Dog Rescue. 501(c)(3) Nonprofit Organization.
             </p>
