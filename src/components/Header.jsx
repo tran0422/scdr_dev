@@ -9,7 +9,11 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
-    document.body.style.overflow = isOpen ? "hidden" : "";
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+    return () => {
+      document.body.style.overflow = '';
+    };
+
   }, [isOpen]);
 
   const navItems = [
@@ -21,12 +25,12 @@ const Header = () => {
   ];
 
   return (
-    <header className='tw-bg-[#fffafa] tw-text-[#cd1c18] tw-relative md:tw-static'>
+    <header className={`tw-bg-[#fffafa] tw-text-[#cd1c18] tw-fixed tw-top-0 tw-left-0 tw-w-full tw-z-10`}>
       <div className='desktop-nav tw-flex tw-items-center tw-justify-between tw-px-4 tw-py-4'>
 
         {/*Logo and Name*/}
         <div className='tw-flex tw-items-center'>
-          <img className='tw-h-10 tw-w-8 tw-mt-2 tw-mb-1 tw-mr-3' src='https://secondchancedogrescue.org/wp-content/uploads/2020/01/logo.png' alt=''/>
+          <img className='tw-h-10 tw-w-8 tw-mt-2 tw-mb-1 tw-mr-3' src='https://secondchancedogrescue.org/wp-content/uploads/2020/01/logo.png' alt='' />
           <div>
             <p>Second Chance</p>
             <p className='tw-text-xs tw-text-[#878787]'>DOG RESCUE</p>
@@ -44,7 +48,7 @@ const Header = () => {
 
         {/*Mobile Nav*/}
         <button className='md:hidden' onClick={() => setIsOpen(!isOpen)}>
-          <FontAwesomeIcon icon={faBars} className='tw-text-3xl'/>
+          <FontAwesomeIcon icon={faBars} className='tw-text-3xl' />
         </button>
 
         <nav className={`${isOpen ? 'tw-flex' : 'tw-hidden'} tw-absolute tw-top-full tw-w-full tw-left-0 tw-overflow-y-auto tw-flex-col tw-items-start tw-text-3xl tw-bg-[#fffafa] tw-gap-6 tw-pt-8 tw-h-[calc(100vh-64px)] md:hidden`}>
