@@ -149,7 +149,7 @@ const Home = () => {
 
       {/* Featured Dogs */}
       <section>
-        <div className='tw-bg-[#9999ff]/30'>
+        <div className='tw-bg-[#9999ff]/30 tw-pb-8'>
           <div className='desktop-home tw-pt-8 tw-px-4 tw-flex tw-flex-col tw-items-center'>
 
             <h1 className='tw-text-3xl tw-font-bold tw-text-center tw-my-4'>
@@ -169,27 +169,33 @@ const Home = () => {
                     pictureThumbnailUrl,
                     name,
                     breedPrimary,
+                    sex,
                     ageString
                   } = attributes;
 
                   return (
                     <SwiperSlide key={id}>
-                      <div className='tw-rounded-lg tw-overflow-hidden tw-max-w-xs tw-bg-[#faffff] '>
-                        <div className='tw-aspect-[4/3] tw-w-full'>
-                          {pictureThumbnailUrl && (
-                            <img src={pictureThumbnailUrl} alt="" className='tw-w-full tw-h-full tw-object-cover' />
-                          )}
-                        </div>
+                      <div className='tw-rounded-lg tw-overflow-hidden tw-h-[420px] tw-max-w-xs tw-bg-[#faffff] tw-relative'>
 
-                        <div>
-                          <h2>
+                        {pictureThumbnailUrl && (
+                          <img src={pictureThumbnailUrl} alt="" className='tw-w-full tw-h-auto tw-object-contain' />
+                        )}
+
+                        <div className='tw-absolute tw-bottom-0 tw-left-0 tw-right-0 tw-p-3 tw-flex tw-flex-col tw-items-start tw-bg-[#faffff]/90'>
+                          <h2 className='tw-text-2xl tw-font-semibold tw-text-[#cd1c18]'>
                             {name}
                           </h2>
+                          <p>
+                            {sex}
+                          </p>
                           <p>
                             {breedPrimary}
                           </p>
                           <p>
                             {ageString}
+                          </p>
+                          <p>
+                            Learn More
                           </p>
                         </div>
                       </div>
@@ -197,6 +203,45 @@ const Home = () => {
                   )
                 })}
               </Swiper>
+            </div>
+            <Link to='/dogs' onClick={scrollToTop} className='desktop-home-hero-button tw-inline-flex tw-items-center tw-justify-center tw-rounded-full tw-mt-8 tw-w-[16rem] tw-py-2 tw-bg-[#cd1c18] tw-text-white'>
+              See the Rest <FontAwesomeIcon icon={faCircleArrowRight} className='tw-ml-1' />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Supporters */}
+      <section>
+        <div className='desktop-home tw-my-10 tw-px-4'>
+          <h1 className='tw-text-xl tw-font-bold tw-text-center tw-my-6 tw-text-[#878787]'>Back by Those Who Believe in <span className='tw-text-[#cd1c18] '>Second Chances</span></h1>
+
+          <div className='tw-gap-8 tw-flex tw-flex-wrap tw-items-center tw-justify-center'>
+            <img className='tw-h-auto tw-w-[288px]' src="https://cdn.bfldr.com/JPI2AE08/at/3qxt6smjf5ftk3bft5n8xtc/PetcoLoveLogo_ColorRGB.svg?auto=webp&format=svg" alt="" />
+            <img className='tw-h-auto tw-w-[288px]' src="https://secondchancedogrescue.org/wp-content/uploads/2025/03/Grant-Badge-3-1024x1024.gif" alt="" />
+            <img className='tw-h-auto tw-w-[288px]' src="https://secondchancedogrescue.org/wp-content/uploads/2025/03/Full-Color-Logo-For-Pets.-For-People.-For-Good-1.png" alt="" />
+          </div>
+        </div>
+      </section>
+
+      {/* Donation */}
+      <section>
+        <div className='tw-bg-[linear-gradient(to_bottom,#9999ff_0%,#faffff_30%)]'>
+          <div className='desktop-home tw-my-16 tw-px-4'>
+            <h1 className='tw-text-4xl tw-font-bold tw-text-center tw-pt-14 tw-my-6'>Turn <span className='tw-text-[#878787]'>Forgotten</span> into <span className='tw-text-[#cd1c18]'>Forever</span></h1>
+            <div className='tw-font-light tw-text-lg tw-mt-6 tw-flex tw-flex-col tw-gap-3'>
+              <p>Every rescue, every medical treatment, every second chance happens because someone chose to help.</p>
+              <p>Your gift today turns forgotten into forever.</p>
+            </div>
+
+            {/*Donation CTAs*/}
+            <div className='desktop-home-hero-cta tw-flex tw-flex-col tw-items-center'>
+              <Link to='/donate' onClick={scrollToTop} className='desktop-home-hero-button tw-inline-flex tw-items-center tw-justify-center tw-rounded-full tw-mt-8 tw-mb-4 tw-w-[16rem] tw-py-2 tw-bg-[#cd1c18] tw-text-white'>
+                Donate Today <FontAwesomeIcon icon={faHeart} className='tw-ml-1' />
+              </Link>
+              <a className='desktop-home-hero-button tw-inline-flex tw-justify-center tw-rounded-full tw-w-[16rem] tw-py-2 tw-border tw-border-black' href="https://scdrsd.substack.com" target='_blank' rel='noopener noreferrer'>
+                Follow their journey
+              </a>
             </div>
           </div>
         </div>
