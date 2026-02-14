@@ -26,6 +26,27 @@ const Home = () => {
     return <div>Loading...</div>
   }
 
+  const DogCard = ({ pictureThumbnailUrl, name, breedPrimary, sex, ageString }) => (
+    <div className='tw-rounded-lg tw-overflow-hidden tw-h-[420px] tw-max-w-xs tw-bg-[#faffff] tw-relative'>
+
+      {pictureThumbnailUrl && (
+        <img src={pictureThumbnailUrl} alt="" className='tw-w-full tw-h-auto tw-object-contain' />
+      )}
+
+      <div className='tw-absolute tw-bottom-0 tw-left-0 tw-right-0 tw-p-3 tw-flex tw-flex-col tw-items-start tw-bg-[#faffff]/90'>
+        <h2 className='tw-text-2xl tw-font-semibold tw-text-[#cd1c18]'>
+          {name}
+        </h2>
+        <p>{sex}</p>
+        <p>{breedPrimary}</p>
+        <p>{ageString}</p>
+        <p>
+          Learn More
+        </p>
+      </div>
+    </div>
+  )
+
   return (
     <main >
       <div className='tw-bg-[linear-gradient(to_bottom_right,#faffff_55%,#faffff_65%,#9999ff)]'>
@@ -149,62 +170,36 @@ const Home = () => {
 
       {/* Featured Dogs */}
       <section>
-        <div className='tw-bg-[#9999ff]/30 tw-pb-8'>
+        <div className='tw-bg-[#9999ff]/30 tw-pb-8 desktop-home-feature '>
           <div className='desktop-home tw-pt-8 tw-px-4 tw-flex tw-flex-col tw-items-center'>
 
-            <h1 className='tw-text-3xl tw-font-bold tw-text-center tw-my-4'>
+            <h1 className='desktop-home-feature-h1 tw-text-3xl tw-font-bold tw-text-center tw-my-4'>
               Meet Your New Best Friend
             </h1>
-            <p className='tw-font-light tw-text-lg tw-my-6'>
+            <p className='desktop-home-feature-p tw-font-light tw-text-lg tw-my-6'>
               These loving dogs are ready for their forever homes.
             </p>
 
             {/* Carousel */}
-            <div className='tw-w-full tw-overflow-hidden'>
+            <div className='tw-w-full tw-overflow-hidden lg:tw-hidden'>
               <Swiper slidesPerView={1.15} centeredSlides={true} spaceBetween={16} >
-                {dogs.map((dog) => {
-
-                  const { id, attributes } = dog;
-                  const {
-                    pictureThumbnailUrl,
-                    name,
-                    breedPrimary,
-                    sex,
-                    ageString
-                  } = attributes;
-
-                  return (
-                    <SwiperSlide key={id}>
-                      <div className='tw-rounded-lg tw-overflow-hidden tw-h-[420px] tw-max-w-xs tw-bg-[#faffff] tw-relative'>
-
-                        {pictureThumbnailUrl && (
-                          <img src={pictureThumbnailUrl} alt="" className='tw-w-full tw-h-auto tw-object-contain' />
-                        )}
-
-                        <div className='tw-absolute tw-bottom-0 tw-left-0 tw-right-0 tw-p-3 tw-flex tw-flex-col tw-items-start tw-bg-[#faffff]/90'>
-                          <h2 className='tw-text-2xl tw-font-semibold tw-text-[#cd1c18]'>
-                            {name}
-                          </h2>
-                          <p>
-                            {sex}
-                          </p>
-                          <p>
-                            {breedPrimary}
-                          </p>
-                          <p>
-                            {ageString}
-                          </p>
-                          <p>
-                            Learn More
-                          </p>
-                        </div>
-                      </div>
-                    </SwiperSlide>
-                  )
-                })}
+                {dogs.map((dog) => (
+                  <SwiperSlide key={dog.id}>
+                    <DogCard{...dog.attributes} />
+                  </SwiperSlide>
+                ))}                  
               </Swiper>
             </div>
-            <Link to='/dogs' onClick={scrollToTop} className='desktop-home-hero-button tw-inline-flex tw-items-center tw-justify-center tw-rounded-full tw-mt-8 tw-w-[16rem] tw-py-2 tw-bg-[#cd1c18] tw-text-white'>
+
+            {/* Desktop */}
+            <div className='tw-hidden desktop-home-feature-card'>
+              {dogs.map((dog) => (
+                <DogCard key={dog.id} {...dog.attributes} />
+              ))}
+            </div>
+
+            {/* CTA for both views */}
+            <Link to='/dogs' onClick={scrollToTop} className='desktop-home-feature-button tw-inline-flex tw-items-center tw-justify-center tw-rounded-full tw-mt-8 tw-w-[16rem] tw-py-3 tw-bg-[#cd1c18] tw-text-white'>
               See the Rest <FontAwesomeIcon icon={faCircleArrowRight} className='tw-ml-1' />
             </Link>
           </div>
