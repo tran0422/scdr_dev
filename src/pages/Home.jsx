@@ -225,9 +225,9 @@ const Home = () => {
       </section>
 
       {/* Donation */}
-      <section>
-        <div className='tw-bg-[linear-gradient(to_bottom,#9999ff_0%,#faffff_30%)]'>
-          <div className='desktop-home tw-my-16 tw-px-4 tw-flex tw-flex-col tw-items-center'>
+      <section >
+        <div className='desktop-home-donation tw-bg-[linear-gradient(to_bottom,#9999ff_0%,#faffff_30%)]'>
+          <div className='desktop-home tw-my-16 tw-px-4 tw-flex tw-flex-col tw-items-center '>
             <h1 className='tw-text-4xl tw-font-bold tw-text-center tw-pt-14 tw-my-6'>Turn <span className='tw-text-[#878787]'>Forgotten</span> into <span className='tw-text-[#cd1c18]'>Forever</span></h1>
             <div className='tw-font-light tw-text-lg tw-mt-6 tw-flex tw-flex-col tw-gap-3'>
               <p>Every rescue, every medical treatment, every second chance happens because someone chose to help.</p>
