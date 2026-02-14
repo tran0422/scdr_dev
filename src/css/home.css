@@ -56,6 +56,36 @@
         box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
     }
 
+    .desktop-home-feature {
+        padding: 0;
+    }
+
+    .desktop-home-feature-h1 {
+        margin-bottom: 0.5rem;
+    }
+
+    .desktop-home-feature-p {
+        margin-bottom: 3rem;
+    }
+
+    .desktop-home-feature-card {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 24px;
+    }
+
+    .desktop-home-feature-card > * {
+        flex: 0 1 300px;
+    }
+
+    .desktop-home-feature-card img:hover {
+        transform: scale(1.15);
+    }
+
+    .desktop-home-feature-button {
+        margin-bottom: 3rem;
+    }
+
     .desktop-home-donation {
         background: none;
         background-image: url('https://www.transparenttextures.com/patterns/black-linen.png');
