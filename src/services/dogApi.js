@@ -19,9 +19,26 @@ export const getAllDogs = async () => {
     headers: { Authorization: API_KEY },
   });
 
-  cachedDogs = response.data.data;
+  const dogs = response.data.data;
+
+  const processedDogs = dogs.map((dog) => {
+    const newPicId = dog.relationships.pictures.data[0].id;
+
+    return {
+      ...dog,
+      attributes: {
+        ...dog.attributes,
+        pictureThumbnailUrl : generatePictureUrl(
+          dog.attributes.pictureThumbnailUrl,
+          newPicId
+        ),
+      },
+    };
+  });
+
+  cachedDogs = processedDogs;
   lastFetchTime = now;
-  return cachedDogs;
+  return processedDogs;
 };
 
 // Helper function to replace picture id with one of the high res
@@ -41,17 +58,5 @@ export const getDogById = async (id) => {
 export const getRandomDogs = async (count = 3) => {
   const dogs = await getAllDogs();
   const shuffled = [...dogs].sort(() => 0.5 - Math.random());
-
-  const selected = shuffled.slice(0, count);
-  return selected.map((dog) => {
-    const newPicId = dog.relationships.pictures.data[0].id;
-
-    return {
-      ...dog,
-      attributes: {
-        ...dog.attributes,
-        pictureThumbnailUrl : generatePictureUrl(dog.attributes.pictureThumbnailUrl, newPicId),
-      }
-    };
-  });
+  return shuffled.slice(0, count);
 };
