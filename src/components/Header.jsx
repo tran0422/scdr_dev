@@ -24,8 +24,10 @@ const Header = () => {
     { to: "/donate", label: "Donate" },
   ];
 
+  const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+
   return (
-    <header className={`tw-bg-[#fffafa] tw-text-[#cd1c18] tw-fixed tw-top-0 tw-left-0 tw-w-full tw-z-10`}>
+    <header className={`tw-bg-[#fffafa] tw-text-[#cd1c18] tw-fixed tw-top-0 tw-left-0 tw-w-full tw-z-20`}>
       <div className='desktop-nav tw-flex tw-items-center tw-justify-between tw-px-4 tw-py-4'>
 
         {/*Logo and Name*/}
@@ -40,14 +42,14 @@ const Header = () => {
         {/*Desktop Nav*/}
         <nav className='tw-hidden md:tw-flex tw-gap-6'>
           {navItems.map(({ to, label }) => (
-            <NavLink key={to} to={to} end className={({ isActive }) => `tw-rounded-full tw-px-4 tw-py-2 tw-transition-colors ${isActive ? "tw-bg-[#cd1c18] tw-text-[#fffafa]" : "tw-text-[#cd1c18] hover:tw-bg-[#f2f2f2]"}`}>
+            <NavLink key={to} to={to} end onClick={scrollToTop} className={({ isActive }) => `tw-rounded-full tw-px-4 tw-py-2 tw-transition-colors ${isActive ? "tw-bg-[#cd1c18] tw-text-[#fffafa]" : "tw-text-[#cd1c18] hover:tw-bg-[#f2f2f2]"}`}>
               {label}
             </NavLink>
           ))}
         </nav>
 
         {/*Mobile Nav*/}
-        <button className='md:hidden' onClick={() => setIsOpen(!isOpen)}>
+        <button className='md:hidden tw-z-20' onClick={() => setIsOpen(!isOpen)}>
           <FontAwesomeIcon icon={faBars} className='tw-text-3xl' />
         </button>
 
