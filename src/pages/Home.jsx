@@ -30,7 +30,7 @@ const Home = () => {
     <div className='tw-rounded-lg tw-overflow-hidden tw-h-[420px] tw-max-w-xs tw-bg-[#faffff] tw-relative'>
 
       {pictureThumbnailUrl && (
-        <img src={pictureThumbnailUrl} alt="" className='tw-w-full tw-h-auto tw-object-contain' />
+        <img src={pictureThumbnailUrl} alt="" className='tw-w-full tw-h-full tw-object-cover tw-overflow-hidden' />
       )}
 
       <div className='tw-absolute tw-bottom-0 tw-left-0 tw-right-0 tw-p-3 tw-flex tw-flex-col tw-items-start tw-bg-[#faffff]/90'>
@@ -181,7 +181,7 @@ const Home = () => {
             </p>
 
             {/* Carousel */}
-            <div className='tw-w-full tw-overflow-hidden lg:tw-hidden'>
+            <div className='tw-h-[428px] tw-w-full lg:tw-hidden'>
               <Swiper slidesPerView={1.15} centeredSlides={true} spaceBetween={16} >
                 {dogs.map((dog) => (
                   <SwiperSlide key={dog.id}>
