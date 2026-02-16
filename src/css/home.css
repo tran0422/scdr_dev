@@ -71,11 +71,13 @@
     .desktop-home-feature-card {
         display: flex;
         flex-wrap: wrap;
+        justify-content: center;
         gap: 24px;
     }
 
     .desktop-home-feature-card > * {
-        flex: 0 1 280px;
+        flex: 1 1 280px;
+        min-width: 200px;
     }
 
     .desktop-home-feature-card img:hover {
