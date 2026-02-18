@@ -26,7 +26,7 @@ const Home = () => {
     return <div>Loading...</div>
   }
 
-  const DogCard = ({ pictureThumbnailUrl, name, breedPrimary, sex, ageString }) => (
+  const DogCard = ({ pictureThumbnailUrl, name, breedPrimary, sex, ageString, id }) => (
     <div className='tw-rounded-lg tw-overflow-hidden tw-h-[420px] tw-max-w-xs tw-bg-[#faffff] tw-relative'>
 
       {pictureThumbnailUrl && (
@@ -40,9 +40,9 @@ const Home = () => {
         <p>{sex}</p>
         <p>{breedPrimary}</p>
         <p>{ageString}</p>
-        <p>
+        <Link className='tw-text-[#ffff00] tw-py-1 tw-px-3 tw-bg-[#0000cc] tw-rounded-full tw-mt-2' to={`/dogs/${id}`} onClick={scrollToTop}>
           Learn More
-        </p>
+        </Link>
       </div>
     </div>
   )
@@ -184,8 +184,8 @@ const Home = () => {
             <div className='tw-h-[428px] tw-w-full lg:tw-hidden'>
               <Swiper slidesPerView={1.15} centeredSlides={true} spaceBetween={16} >
                 {dogs.map((dog) => (
-                  <SwiperSlide key={dog.id}>
-                    <DogCard{...dog.attributes} />
+                  <SwiperSlide key={dog.id}  >
+                    <DogCard id={dog.id} {...dog.attributes} />
                   </SwiperSlide>
                 ))}                  
               </Swiper>
@@ -194,7 +194,7 @@ const Home = () => {
             {/* Desktop */}
             <div className='tw-hidden desktop-home-feature-card'>
               {dogs.map((dog) => (
-                <DogCard key={dog.id} {...dog.attributes} />
+                <DogCard key={dog.id} id={dog.id} {...dog.attributes} />
               ))}
             </div>
 

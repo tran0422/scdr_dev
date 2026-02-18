@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState, useEffect, useMemo, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { getAllDogs } from '../services/dogApi';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFilter, faSort } from '@fortawesome/free-solid-svg-icons';
@@ -10,6 +11,8 @@ const Dogs = () => {
   const [filterSex, setFilterSex] = useState('All');
   const [sortBy, setSortBy] = useState('AZ');
   const introRef = useRef(null);
+
+  const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
 
   useEffect(() => {
     const fetchDogs = async () => {
@@ -115,9 +118,9 @@ const Dogs = () => {
                   <p>{sex}</p>
                   <p>{breedPrimary}</p>
                   <p>{ageString}</p>
-                  <p>
+                  <Link className='tw-text-[#ffff00] tw-py-1 tw-px-3 tw-bg-[#0000cc] tw-rounded-full tw-mt-2' to={`/dogs/${id}`} onClick={scrollToTop}>
                     Learn More
-                  </p>
+                  </Link>
                 </div>
               </div>
             );
