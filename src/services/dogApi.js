@@ -22,16 +22,15 @@ export const getAllDogs = async () => {
   const dogs = response.data.data;
 
   const processedDogs = dogs.map((dog) => {
-    const newPicId = dog.relationships.pictures.data[0].id;
+    const picIds = dog.relationships.pictures.data || [];
+
+    const allPics = picIds.map((pic) => generatePictureUrl(dog.attributes.pictureThumbnailUrl, pic.id))
 
     return {
       ...dog,
       attributes: {
         ...dog.attributes,
-        pictureThumbnailUrl : generatePictureUrl(
-          dog.attributes.pictureThumbnailUrl,
-          newPicId
-        ),
+        pictureThumbnailUrl: allPics[0] || null, allPics,
       },
     };
   });
