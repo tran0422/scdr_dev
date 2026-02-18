@@ -7,17 +7,19 @@ import Dogs from "./pages/Dogs.jsx";
 import Volunteer from "./pages/Volunteer.jsx";
 import About from "./pages/About.jsx";
 import Donate from "./pages/Donate.jsx";
+import DogDeets from "./pages/DogDeets.jsx";
 
 function App() {
   return (
     <BrowserRouter>
-      <div className="entirePage">
+      <div>
         <Header />
 
         <main>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/dogs" element={<Dogs />} />
+            <Route path="/dogs/:id" element={<DogDeets />} />
             <Route path="/volunteer" element={<Volunteer />} />
             <Route path="/us" element={<About />} />
             <Route path="/donate" element={<Donate />} />
