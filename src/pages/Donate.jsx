@@ -93,8 +93,8 @@ const Donate = () => {
                 <option value="Option 3">$50.00</option>
                 <option value="Option 4">$100.00</option>
               </select>
+              <input className='tw-block tw-mx-auto tw-mb-2' type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_subscribeCC_LG.gif" border="0" name="submit" alt=''></input>
             </form>
-            <input className='tw-block tw-mx-auto tw-mb-2' type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_subscribeCC_LG.gif" border="0" name="submit" alt=''></input>
           </div>
 
           <div className='desktop-donate-ways-card tw-bg-[#faffff] tw-w-fit tw-max-w-[300px] tw-p-3 tw-rounded-lg'>
