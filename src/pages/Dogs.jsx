@@ -55,7 +55,7 @@ const Dogs = () => {
     <main>
       {/* Intro banner */}
       <section ref={introRef}>
-        <div className='tw-bg-[#9999ff]'>
+        <div>
           <div className='desktop-adoptable tw-flex-tw-flex-col tw-justify-center tw-mx-4 tw-py-8 tw-mt-20'>
             <h1 className='desktop-adoptable-hero tw-text-3xl tw-font-bold tw-text-center tw-my-4'>
               <span className='tw-text-[#cd1c18]'>Adoptable</span> Dogs
