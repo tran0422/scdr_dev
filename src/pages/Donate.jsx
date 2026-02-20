@@ -84,7 +84,7 @@ const Donate = () => {
 
             <form action="https://www.paypal.com/cgi-bin/webscr" method='post' target='_top' className='tw-text-center tw-my-4'>
               <input type="hidden" name='cmd' value='_s-xclick' />
-              <input type="hidden" name='hosted_id_button' value='XTWH6LEUJUKLY' />
+              <input type="hidden" name='hosted_button_id' value='XTWH6LEUJUKLY' />
               <input type="hidden" name='currency_code' value='USD' />
 
               <select name="os0" className='tw-border tw-rounded tw-px-3 tw-py-2' >
