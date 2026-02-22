@@ -32,8 +32,6 @@
     }
 
     .desktop-donate-wish {
-        /* display: flex;
-        justify-content: space-between; */
         max-width: 1000px;
         padding: 1.5rem;
         gap: 2rem;
