@@ -34,7 +34,7 @@ const Donate = () => {
   }, [])
 
   return (
-    <div className='desktop-zelle-wrapper tw-mt-24'>
+    <div className='tw-mt-24'>
       {/* Hero */}
       <div className='tw-py-4 tw-bg-[#cc0000]'>
         <div className='desktop-donate tw-mx-4'>
@@ -52,7 +52,7 @@ const Donate = () => {
               <h2 className='tw-text-2xl tw-font-bold tw-text-[#faffff]'>
                 Donate / Adoption Fee
               </h2>
-              <div className='tw-mt-4 tw-mb-8' id='paypal-donate'></div>
+              <div className='tw-mt-4 tw-mb-16' id='paypal-donate'></div>
             </div>
           </div>
         </div>
@@ -170,7 +170,7 @@ const Donate = () => {
             </div>
 
             {/* Links */}
-            <div className='desktop-donate-wish-cta tw-flex tw-flex-col tw-items-center tw-mt-10 tw-gap-2'>
+            <div className='desktop-donate-wish-cta tw-flex tw-flex-col tw-items-center tw-mt-10 tw-mb-4 tw-gap-2'>
               <a className='tw-flex tw-items-center tw-justify-center tw-rounded-full tw-bg-[#cd1c18] tw-py-1 tw-px-3 tw-w-[100px] tw-text-[#faffff]' href="https://www.amazon.com/gp/registry/wishlist/O27VKCIUEX7H/ref=cm_sw_em_r_wsg_V230wbPY6MYH8_wb" target='_blank' rel='noreferrer'>
                 Amazon
               </a>
