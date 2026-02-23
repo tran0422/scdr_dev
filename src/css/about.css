@@ -19,14 +19,13 @@
     z-index: 0;
     background: linear-gradient(
         90deg,
-        #cd1c18,
+        #0000cc,
         #faffff,
-        #000099,
-        #878787,
+        #cc0000,
         #ffff00
     );
 
-    animation: borderFlow 10s linear infinite;
+    animation: borderFlow 12s linear infinite;
 }
 
 .about-moving-border::after {
@@ -41,4 +40,35 @@
 .about-moving-border > * {
     position: relative;
     z-index: 2;
+}
+
+@media (min-width: 640px) {
+    .desktop-about {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .desktop-about-mission {
+        max-width: 600px;
+    }
+
+    .desktop-about-mission-h1 {
+        font-size: 3rem;
+        padding-top: 6rem;
+    }
+
+    .desktop-about-mission-p {
+        max-width: 600px;
+        font-size: 1.25rem;
+    }
+
+    .desktop-about-cards {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 4rem 0;
+    }
+
+    .desktop-about-cards div {
+        max-width: 400px;
+    }
 }
