@@ -5,21 +5,21 @@ import '../css/about.css';
 
 const About = () => {
   return (
-    <section>
-      <div className='tw-mx-4'>
-        <div className='tw-flex tw-flex-col tw-items-center'>
+    <section className='desktop-about'>
+      <div className='desktop-about-mission tw-mx-4'>
+        <div className='desktop-about-mission-h1 tw-flex tw-flex-col tw-items-center'>
           <FontAwesomeIcon icon={faCompass} className='tw-text-[#cd1c18] tw-mt-24 tw-text-4xl' />
           <h1 className='tw-font-bold tw-text-4xl tw-mt-4'>
             Our <span className='tw-text-[#cd1c18]'>Mission</span>
           </h1>
         </div>
-        <p className='tw-font-light tw-my-4'>
+        <p className='desktop-about-mission-p tw-font-light tw-my-4'>
           Second Chance Dog Rescue is a 501(c)(3) nonprofit dedicated to rescuing, rehabilitating, and re-homing dogs through a network of foster families.
           We provide medical care, love, and support so every dog gets a true second chance.
         </p>
       </div>
 
-      <div className=''>
+      <div className='desktop-about-cards'>
         <div className='about-moving-border tw-mx-4 tw-p-2 tw-mb-10'>
           <h2 className='tw-font-bold tw-text-2xl tw-mb-2'>
             Our <span className='tw-text-[#cd1c18]'>Story</span>
@@ -84,7 +84,7 @@ const About = () => {
               Local shelters
             </p>
           </div>
-           <div className='tw-flex tw-gap-1 tw-items-center'>
+          <div className='tw-flex tw-gap-1 tw-items-center'>
             <FontAwesomeIcon icon={faEarthAmerica} className='tw-text-[#cd1c18]' />
             <p>
               Baja California, Mexico
