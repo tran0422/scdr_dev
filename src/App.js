@@ -8,13 +8,13 @@ import Volunteer from "./pages/Volunteer.jsx";
 import About from "./pages/About.jsx";
 import Donate from "./pages/Donate.jsx";
 import DogDeets from "./pages/DogDeets.jsx";
+import { ModalProvider } from "./components/ModalContext.jsx";
 
 function App() {
   return (
     <BrowserRouter>
-      <div>
+      <ModalProvider>
         <Header />
-
         <main>
           <Routes>
             <Route path="/" element={<Home />} />
@@ -25,9 +25,8 @@ function App() {
             <Route path="/donate" element={<Donate />} />
           </Routes>
         </main>
-
         <Footer />
-      </div>
+      </ModalProvider>
     </BrowserRouter>
   );
 }
