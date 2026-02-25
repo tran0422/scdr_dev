@@ -63,7 +63,7 @@ const Volunteer = () => {
           </div>
           {/* Links */}
           <div className='tw-flex tw-flex-col tw-items-center'>
-            <a className='tw-inline-flex tw-items-center tw-justify-center tw-rounded-full tw-my-8 tw-w-[16rem] tw-py-2 tw-bg-[#0000cc]/80 tw-text-white' href="https://forms.gle/NfmPhCZLzAwe3jXBA" target='_blank' rel='noopener noreferrer'>
+            <a className='desktop-vol-volunteer-cta tw-inline-flex tw-items-center tw-justify-center tw-rounded-full tw-my-8 tw-w-[16rem] tw-py-2 tw-bg-[#0000cc]/80 tw-text-white' href="https://forms.gle/NfmPhCZLzAwe3jXBA" target='_blank' rel='noopener noreferrer'>
               Foster App
             </a>
           </div>
@@ -80,7 +80,7 @@ const Volunteer = () => {
           </p>
 
           <div className='desktop-vol-volunteer'>
-            <div className='tw-flex tw-flex-col tw-border-2 tw-border-[#9999ff] tw-bg-[#faffff] tw-mt-8 tw-mb-3 tw-rounded-xl tw-relative tw-max-w-xs tw-w-full'>
+            <div className='desktop-vol-volunteer-card tw-flex tw-flex-col tw-border-2 tw-border-[#9999ff] tw-bg-[#faffff] tw-mt-8 tw-mb-3 tw-rounded-xl tw-relative tw-max-w-xs tw-w-full'>
               <FontAwesomeIcon icon={faCalendarAlt} className='tw-text-[#0000cc]/80 tw-p-1 tw-text-3xl tw-m-4' />
               <h3 className='tw-text-2xl tw-font-bold tw-mx-4'>
                 Event
@@ -89,12 +89,12 @@ const Volunteer = () => {
                 Help at various events: adoption, fundraisers, and community outreach.
                 Set up and teardown tents, playpen, socialize dogs, and connect with adopters.
               </p>
-              <p onClick={handleOpenCal} className='tw-mx-4 tw-mb-3 tw-rounded-full tw-bg-[#0000cc] tw-w-fit tw-px-4 tw-py-1 tw-text-bold tw-text-[#ffff00] tw-cursor-pointer'>
+              <p onClick={handleOpenCal} className='desktop-vol-volunteer-cta tw-mx-4 tw-mb-3 tw-rounded-full tw-bg-[#0000cc] tw-w-fit tw-px-4 tw-py-1 tw-text-bold tw-text-[#ffff00] tw-cursor-pointer'>
                 Events
               </p>
             </div>
 
-            <div className='tw-flex tw-flex-col tw-border-2 tw-border-[#9999ff] tw-bg-[#faffff] tw-my-6 tw-rounded-xl tw-relative tw-max-w-xs tw-w-full'>
+            <div className='desktop-vol-volunteer-card tw-flex tw-flex-col tw-border-2 tw-border-[#9999ff] tw-bg-[#faffff] tw-my-6 tw-rounded-xl tw-relative tw-max-w-xs tw-w-full'>
               <FontAwesomeIcon icon={faCarSide} className='tw-text-[#0000cc]/80 tw-p-1 tw-text-3xl tw-m-4' />
               <h3 className='tw-text-2xl tw-font-bold tw-mx-4'>
                 Transport
@@ -104,7 +104,7 @@ const Volunteer = () => {
               </p>
             </div>
 
-            <div className='tw-flex tw-flex-col tw-border-2 tw-border-[#9999ff] tw-bg-[#faffff] tw-my-6 tw-rounded-xl tw-relative tw-max-w-xs tw-w-full'>
+            <div className='desktop-vol-volunteer-card tw-flex tw-flex-col tw-border-2 tw-border-[#9999ff] tw-bg-[#faffff] tw-my-6 tw-rounded-xl tw-relative tw-max-w-xs tw-w-full'>
               <FontAwesomeIcon icon={faCameraRetro} className='tw-text-[#0000cc]/80 tw-p-1 tw-text-3xl tw-m-4' />
               <h3 className='tw-text-2xl tw-font-bold tw-mx-4'>
                 Photography
@@ -114,7 +114,7 @@ const Volunteer = () => {
               </p>
             </div>
 
-            <div className='tw-flex tw-flex-col tw-border-2 tw-border-[#9999ff] tw-bg-[#faffff] tw-my-6 tw-rounded-xl tw-relative tw-max-w-xs tw-w-full'>
+            <div className='desktop-vol-volunteer-card tw-flex tw-flex-col tw-border-2 tw-border-[#9999ff] tw-bg-[#faffff] tw-my-6 tw-rounded-xl tw-relative tw-max-w-xs tw-w-full'>
               <FontAwesomeIcon icon={faBullhorn} className='tw-text-[#0000cc]/80 tw-p-1 tw-text-3xl tw-m-4' />
               <h3 className='tw-text-2xl tw-font-bold tw-mx-4'>
                 Outreach
@@ -124,7 +124,7 @@ const Volunteer = () => {
               </p>
             </div>
 
-            <div className='tw-flex tw-flex-col tw-border-2 tw-border-[#9999ff] tw-bg-[#faffff] tw-my-2 tw-rounded-xl tw-relative tw-max-w-xs tw-w-full'>
+            <div className='desktop-vol-volunteer-card tw-flex tw-flex-col tw-border-2 tw-border-[#9999ff] tw-bg-[#faffff] tw-my-2 tw-rounded-xl tw-relative tw-max-w-xs tw-w-full'>
               <FontAwesomeIcon icon={faLaptopCode} className='tw-text-[#0000cc]/80 tw-p-1 tw-text-3xl tw-m-4' />
               <h3 className='tw-text-2xl tw-font-bold tw-mx-4'>
                 Technology
@@ -136,7 +136,7 @@ const Volunteer = () => {
           </div>
 
           {/* Volunteer CTA*/}
-          <a className='tw-inline-flex tw-justify-center tw-rounded-full tw-w-[16rem] tw-mt-8 tw-mb-16 tw-py-2 tw-bg-[#0000cc]/80 tw-text-white' href="https://forms.gle/GVmr7RrTY9zzjU1G7" target='_blank' rel='noopener noreferrer'>
+          <a className='desktop-vol-volunteer-cta tw-inline-flex tw-justify-center tw-rounded-full tw-w-[16rem] tw-mt-8 tw-mb-16 tw-py-2 tw-bg-[#0000cc]/80 tw-text-white' href="https://forms.gle/GVmr7RrTY9zzjU1G7" target='_blank' rel='noopener noreferrer'>
             Volunteer App
           </a>
         </div>
