@@ -2,8 +2,11 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBullhorn, faCalendarAlt, faCameraRetro, faCarSide, faCheckCircle, faLaptopCode } from '@fortawesome/free-solid-svg-icons';
 import '../css/volunteer.css';
+import { useModal } from '../components/ModalContext';
 
 const Volunteer = () => {
+  const {handleOpenCal} = useModal();
+
   return (
     <div>
       <section className='tw-bg-[linear-gradient(to_bottom_right,#faffff_55%,#faffff_65%,#ff9999)]'>
@@ -82,9 +85,12 @@ const Volunteer = () => {
               <h3 className='tw-text-2xl tw-font-bold tw-mx-4'>
                 Event
               </h3>
-              <p className='tw-mx-4 tw-pb-3 tw-font-light'>
+              <p className='tw-mx-4 tw-pb-1 tw-font-light'>
                 Help at various events: adoption, fundraisers, and community outreach.
                 Set up and teardown tents, playpen, socialize dogs, and connect with adopters.
+              </p>
+              <p onClick={handleOpenCal} className='tw-mx-4 tw-mb-3 tw-rounded-full tw-bg-[#0000cc] tw-w-fit tw-px-4 tw-py-1 tw-text-bold tw-text-[#ffff00] tw-cursor-pointer'>
+                Events
               </p>
             </div>
 

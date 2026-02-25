@@ -8,10 +8,13 @@ import { getRandomDogs } from '../services/dogApi';
 import '../css/home.css';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
+import { useModal } from '../components/ModalContext';
 
 const Home = () => {
   const [dogs, setDogs] = useState([]);
   const [loading, setLoading] = useState(true);
+
+  const {handleOpenCal} = useModal();
 
   useEffect(() => {
     getRandomDogs(3).then((data) => {
@@ -96,8 +99,8 @@ const Home = () => {
               <h3 className='tw-text-2xl tw-font-bold tw-mx-4'>
                 Browse
               </h3>
-              <p className='tw-mx-4 tw-pb-3'>
-                Online or at one of our adoption events.
+              <p className='tw-mx-4 tw-pb-4'>
+                Online or at one of our adoption{' '} <span onClick={handleOpenCal} className='tw-rounded-full tw-bg-[#0000cc] tw-w-fit tw-px-2 tw-py-1 tw-text-bold tw-text-[#ffff00] tw-cursor-pointer'>events</span>
               </p>
               <div className='tw-rounded-full tw-bg-[#cd1c18] tw-w-8 tw-h-8 tw-flex tw-justify-center tw-items-center tw-text-bold tw-text-[#faffff] tw-absolute tw-top-0 tw-left-0 tw--translate-x-1/2 tw--translate-y-1/2'>
                 1
@@ -187,7 +190,7 @@ const Home = () => {
                   <SwiperSlide key={dog.id}  >
                     <DogCard id={dog.id} {...dog.attributes} />
                   </SwiperSlide>
-                ))}                  
+                ))}
               </Swiper>
             </div>
 
