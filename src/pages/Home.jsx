@@ -43,7 +43,7 @@ const Home = () => {
         <p>{sex}</p>
         <p>{breedPrimary}</p>
         <p>{ageString}</p>
-        <Link className='tw-text-[#ffff00] tw-py-1 tw-px-3 tw-bg-[#0000cc] tw-rounded-full tw-mt-2' to={`/dogs/${id}`} onClick={scrollToTop}>
+        <Link className='desktop-home-blue-button tw-text-[#ffff00] tw-py-1 tw-px-3 tw-bg-[#0000cc] tw-rounded-full tw-mt-2' to={`/dogs/${id}`} onClick={scrollToTop}>
           Learn More
         </Link>
       </div>
@@ -100,7 +100,7 @@ const Home = () => {
                 Browse
               </h3>
               <p className='tw-mx-4 tw-pb-4'>
-                Online or at one of our adoption{' '} <span onClick={handleOpenCal} className='tw-rounded-full tw-bg-[#0000cc] tw-w-fit tw-px-2 tw-py-1 tw-text-bold tw-text-[#ffff00] tw-cursor-pointer'>events</span>
+                Online or at one of our adoption{' '} <span onClick={handleOpenCal} className='desktop-home-blue-button tw-rounded-full tw-bg-[#0000cc] tw-w-fit tw-px-2 tw-py-1 tw-text-bold tw-text-[#ffff00] tw-cursor-pointer'>events</span>
               </p>
               <div className='tw-rounded-full tw-bg-[#cd1c18] tw-w-8 tw-h-8 tw-flex tw-justify-center tw-items-center tw-text-bold tw-text-[#faffff] tw-absolute tw-top-0 tw-left-0 tw--translate-x-1/2 tw--translate-y-1/2'>
                 1

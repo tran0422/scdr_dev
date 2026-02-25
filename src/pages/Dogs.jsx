@@ -118,7 +118,7 @@ const Dogs = () => {
                   <p>{sex}</p>
                   <p>{breedPrimary}</p>
                   <p>{ageString}</p>
-                  <Link className='tw-text-[#ffff00] tw-py-1 tw-px-3 tw-bg-[#0000cc] tw-rounded-full tw-mt-2' to={`/dogs/${id}`} onClick={scrollToTop}>
+                  <Link className='desktop-dog-blue-button tw-text-[#ffff00] tw-py-1 tw-px-3 tw-bg-[#0000cc] tw-rounded-full tw-mt-2' to={`/dogs/${id}`} onClick={scrollToTop}>
                     Learn More
                   </Link>
                 </div>
