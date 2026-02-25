@@ -96,4 +96,9 @@
         background-blend-mode: overlay;
     }
 
+    .desktop-home-blue-button:hover {
+        background-color: #cc0000;
+        color: #ffff00;
+    }
+
 }

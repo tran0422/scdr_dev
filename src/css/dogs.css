@@ -37,4 +37,9 @@
         overflow: hidden;
         object-fit: cover;
     }
+
+    .desktop-dog-blue-button:hover {
+        background-color: #cc0000;
+        color: #ffff00;
+    }
 }

@@ -28,6 +28,11 @@
         padding: 1rem 2rem;
     }
 
+    .desktop-vol-hero-cta a:hover {
+        background-color: #0000cc;
+        color: #ffff00;
+    }
+
     .desktop-vol-foster {
         display: flex;
         flex-direction: column;
@@ -56,8 +61,17 @@
 
     .desktop-vol-volunteer div {
         max-width: 300px;
-        height: 260px;
+        height: 280px;
         margin-top: 6px;
+    }
+
+    .desktop-vol-volunteer-card:hover {
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .desktop-vol-volunteer-cta:hover {
+        background-color: #cc0000;
+        color: #ffff00;
     }
 
 }

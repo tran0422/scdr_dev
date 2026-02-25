@@ -57,4 +57,9 @@
         gap: 4rem;
     }
 
+    .desktop-donate-wish-cta a:hover {
+        background-color: #cc0000;
+        color: #ffff00;
+    }
+
 }
