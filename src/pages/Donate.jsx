@@ -171,10 +171,10 @@ const Donate = () => {
 
             {/* Links */}
             <div className='desktop-donate-wish-cta tw-flex tw-flex-col tw-items-center tw-mt-10 tw-mb-4 tw-gap-2'>
-              <a className='tw-flex tw-items-center tw-justify-center tw-rounded-full tw-bg-[#cd1c18] tw-py-1 tw-px-3 tw-w-[100px] tw-text-[#faffff]' href="https://www.amazon.com/gp/registry/wishlist/O27VKCIUEX7H/ref=cm_sw_em_r_wsg_V230wbPY6MYH8_wb" target='_blank' rel='noreferrer'>
+              <a className='tw-flex tw-items-center tw-justify-center tw-rounded-full tw-bg-[#ff9900] tw-py-1 tw-px-3 tw-w-[100px]' href="https://www.amazon.com/gp/registry/wishlist/O27VKCIUEX7H/ref=cm_sw_em_r_wsg_V230wbPY6MYH8_wb" target='_blank' rel='noreferrer'>
                 Amazon
               </a>
-              <a className='tw-flex tw-items-center tw-justify-center tw-rounded-full tw-bg-[#cd1c18] tw-py-1 tw-px-3 tw-w-[100px] tw-text-[#faffff]' href="https://www.chewy.com/g/second-change-dog-rescue_b78023353" target='_blank' rel='noreferrer'>
+              <a className='tw-flex tw-items-center tw-justify-center tw-rounded-full tw-bg-[#1c49c2] tw-py-1 tw-px-3 tw-w-[100px] tw-text-[#faffff]' href="https://www.chewy.com/g/second-change-dog-rescue_b78023353" target='_blank' rel='noreferrer'>
                 Chewy
               </a>
             </div>
