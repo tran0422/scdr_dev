@@ -58,7 +58,6 @@
 
     .desktop-home-feature-card {
         display: flex;
-        /* flex-wrap: wrap; */
         justify-content: center;
         gap: 2rem;
     }
@@ -70,10 +69,6 @@
 
     .desktop-home-feature-card img:hover {
         transform: scale(1.15);
-    }
-
-    .desktop-home-feature-button {
-        margin-bottom: 3rem;
     }
 
     .desktop-home-donation {
