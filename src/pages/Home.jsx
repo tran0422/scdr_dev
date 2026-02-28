@@ -14,7 +14,7 @@ const Home = () => {
   const [dogs, setDogs] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const {handleOpenCal} = useModal();
+  const { handleOpenCal } = useModal();
 
   useEffect(() => {
     getRandomDogs(3).then((data) => {
@@ -30,7 +30,7 @@ const Home = () => {
   }
 
   const DogCard = ({ pictureThumbnailUrl, name, breedPrimary, sex, ageString, id }) => (
-    <div className='tw-rounded-lg tw-overflow-hidden tw-h-[420px] tw-max-w-xs tw-bg-[#faffff] tw-relative'>
+    <div className='tw-rounded-lg tw-overflow-hidden tw-h-[420px] tw-bg-[#faffff] tw-relative'>
 
       {pictureThumbnailUrl && (
         <img src={pictureThumbnailUrl} alt="" className='tw-w-full tw-h-full tw-object-cover tw-overflow-hidden' />
@@ -53,7 +53,6 @@ const Home = () => {
   return (
     <main >
       <div className='tw-bg-[linear-gradient(to_bottom_right,#faffff_55%,#faffff_65%,#9999ff)]'>
-
         <div className='desktop-home'>
 
           {/*Hero section*/}
@@ -69,8 +68,32 @@ const Home = () => {
               We rescue, rehabilitate, and re-home homeless dogs in San Diego and surrounding communities, providing essential medical care and loving foster homes until they find their forever families.
             </p>
 
+            {/* Featured Dogs */}
+            <div>
+              <div className='tw-pt-8 tw-flex tw-flex-col tw-items-center'>
+
+                {/* Carousel */}
+                <div className='tw-h-[428px] tw-w-full lg:tw-hidden'>
+                  <Swiper slidesPerView={1.15} centeredSlides={true} spaceBetween={16} >
+                    {dogs.map((dog) => (
+                      <SwiperSlide key={dog.id}  >
+                        <DogCard id={dog.id} {...dog.attributes} />
+                      </SwiperSlide>
+                    ))}
+                  </Swiper>
+                </div>
+
+                {/* Desktop */}
+                <div className='tw-hidden desktop-home-feature-card'>
+                  {dogs.map((dog) => (
+                    <DogCard key={dog.id} id={dog.id} {...dog.attributes} />
+                  ))}
+                </div>
+              </div>
+            </div>
+
             {/*Hero CTAs*/}
-            <div className='desktop-home-hero-cta tw-flex tw-flex-col tw-items-center'>
+            <div className='desktop-home-hero-cta tw-flex tw-flex-col tw-items-center tw-w-fit tw-mx-auto'>
               <Link to='/dogs' onClick={scrollToTop} className='desktop-home-hero-button tw-inline-flex tw-items-center tw-justify-center tw-rounded-full tw-mt-8 tw-mb-4 tw-w-[16rem] tw-py-2 tw-bg-[#cd1c18] tw-text-white'>
                 Meet Our Dogs <FontAwesomeIcon icon={faCircleArrowRight} className='tw-ml-1' />
               </Link>
@@ -171,56 +194,9 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Featured Dogs */}
-      <section>
-        <div className='tw-bg-[#9999ff]/30 tw-pb-8 desktop-home-feature '>
-          <div className='desktop-home tw-pt-8 tw-px-4 tw-flex tw-flex-col tw-items-center'>
 
-            <h1 className='desktop-home-feature-h1 tw-text-3xl tw-font-bold tw-text-center tw-my-4'>
-              Meet Your New Best Friend
-            </h1>
-            <p className='desktop-home-feature-p tw-font-light tw-text-lg tw-my-6'>
-              These loving dogs are ready for their forever homes.
-            </p>
 
-            {/* Carousel */}
-            <div className='tw-h-[428px] tw-w-full lg:tw-hidden'>
-              <Swiper slidesPerView={1.15} centeredSlides={true} spaceBetween={16} >
-                {dogs.map((dog) => (
-                  <SwiperSlide key={dog.id}  >
-                    <DogCard id={dog.id} {...dog.attributes} />
-                  </SwiperSlide>
-                ))}
-              </Swiper>
-            </div>
 
-            {/* Desktop */}
-            <div className='tw-hidden desktop-home-feature-card'>
-              {dogs.map((dog) => (
-                <DogCard key={dog.id} id={dog.id} {...dog.attributes} />
-              ))}
-            </div>
-
-            {/* CTA for both views */}
-            <Link to='/dogs' onClick={scrollToTop} className='desktop-home-feature-button tw-inline-flex tw-items-center tw-justify-center tw-rounded-full tw-mt-8 tw-w-[16rem] tw-py-3 tw-bg-[#cd1c18] tw-text-white'>
-              See the Rest <FontAwesomeIcon icon={faCircleArrowRight} className='tw-ml-1' />
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Supporters */}
-      <section>
-        <div className='desktop-home tw-my-10 tw-px-4'>
-          <h1 className='tw-text-xl tw-font-bold tw-text-center tw-my-6 tw-text-[#878787]'>Back by Those Who Believe in <span className='tw-text-[#cd1c18] '>Second Chances</span></h1>
-
-          <div className='tw-gap-8 tw-flex tw-flex-wrap tw-items-center tw-justify-center'>
-            <img className='tw-h-auto tw-w-[288px]' src="https://cdn.bfldr.com/JPI2AE08/at/3qxt6smjf5ftk3bft5n8xtc/PetcoLoveLogo_ColorRGB.svg?auto=webp&format=svg" alt="" />
-            <img className='tw-h-auto tw-w-[288px]' src="https://secondchancedogrescue.org/wp-content/uploads/2025/03/Grant-Badge-3-1024x1024.gif" alt="" />
-            <img className='tw-h-auto tw-w-[288px]' src="https://secondchancedogrescue.org/wp-content/uploads/2025/03/Full-Color-Logo-For-Pets.-For-People.-For-Good-1.png" alt="" />
-          </div>
-        </div>
-      </section>
 
       {/* Donation */}
       <section >
@@ -241,6 +217,19 @@ const Home = () => {
                 Follow their journey
               </a>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Supporters */}
+      <section>
+        <div className='desktop-home tw-my-10 tw-px-4'>
+          <h1 className='tw-text-xl tw-font-bold tw-text-center tw-my-6 tw-text-[#878787]'>Back by Those Who Believe in <span className='tw-text-[#cd1c18] '>Second Chances</span></h1>
+
+          <div className='tw-gap-8 tw-flex tw-flex-wrap tw-items-center tw-justify-center'>
+            <img className='tw-h-auto tw-w-[288px]' src="https://cdn.bfldr.com/JPI2AE08/at/3qxt6smjf5ftk3bft5n8xtc/PetcoLoveLogo_ColorRGB.svg?auto=webp&format=svg" alt="" />
+            <img className='tw-h-auto tw-w-[288px]' src="https://secondchancedogrescue.org/wp-content/uploads/2025/03/Grant-Badge-3-1024x1024.gif" alt="" />
+            <img className='tw-h-auto tw-w-[288px]' src="https://secondchancedogrescue.org/wp-content/uploads/2025/03/Full-Color-Logo-For-Pets.-For-People.-For-Good-1.png" alt="" />
           </div>
         </div>
       </section>
