@@ -4,7 +4,9 @@ import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { getDogById } from '../services/dogApi';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination } from 'swiper/modules';
 import 'swiper/css';
+import 'swiper/css/pagination';
 import '../css/deets.css';
 
 const scrubText = (txt) => {
@@ -42,7 +44,7 @@ const DogDeets = () => {
         <div className='desktop-deets'>
             {/* Carousel */}
             <div className='lg:tw-hidden tw-mt-24'>
-                <Swiper slidesPerView={1.15} centeredSlides={true} spaceBetween={16} >
+                <Swiper slidesPerView={1.15} centeredSlides={true} spaceBetween={16} modules={[Pagination]} pagination={{el:'.custom-pagination', clickable:true}} >
                     {dog.attributes.allPics.map((url, index) => (
                         <SwiperSlide key={index}>
                             <div className=''>
@@ -51,6 +53,7 @@ const DogDeets = () => {
                         </SwiperSlide>
                     ))}
                 </Swiper>
+                <div className='custom-pagination tw-flex tw-justify-center'></div>
             </div>
 
             {/* Desktop */}
