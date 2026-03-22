@@ -44,7 +44,7 @@ const DogDeets = () => {
     return (
         <div className='desktop-deets'>
             {/* Carousel */}
-            <div className='md:tw-hidden tw-mt-24'>
+            <div className='sm:tw-hidden tw-mt-24'>
                 {/* <Swiper slidesPerView={1.15} centeredSlides={true} spaceBetween={16} modules={[Pagination]} pagination={{el:'.custom-pagination', clickable:true}} > */}
                 <Swiper effect='cards' grabCursor={true} modules={[EffectCards]} >
                     {dog.attributes.allPics.map((url, index) => (

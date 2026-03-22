@@ -73,7 +73,7 @@ const Home = () => {
               <div className='tw-pt-8 tw-flex tw-flex-col tw-items-center'>
 
                 {/* Carousel */}
-                <div className='tw-h-[428px] tw-w-full md:tw-hidden'>
+                <div className='tw-h-[428px] tw-w-full sm:tw-hidden'>
                   <Swiper slidesPerView={1.15} centeredSlides={true} spaceBetween={16} >
                     {dogs.map((dog) => (
                       <SwiperSlide key={dog.id}  >
