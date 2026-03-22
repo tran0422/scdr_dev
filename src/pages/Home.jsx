@@ -229,7 +229,7 @@ const Home = () => {
           <div className='tw-gap-8 tw-flex tw-flex-wrap tw-items-center tw-justify-center'>
             <img className='tw-h-auto tw-w-[288px]' src="https://cdn.bfldr.com/JPI2AE08/at/3qxt6smjf5ftk3bft5n8xtc/PetcoLoveLogo_ColorRGB.svg?auto=webp&format=svg" alt="" />
             <img className='tw-h-auto tw-w-[288px]' src="https://secondchancedogrescue.org/wp-content/uploads/2025/03/Grant-Badge-3-1024x1024.gif" alt="" />
-            <img className='tw-h-auto tw-w-[288px]' src="https://secondchancedogrescue.org/wp-content/uploads/2025/03/Full-Color-Logo-For-Pets.-For-People.-For-Good-1.png" alt="" />
+            <img className='tw-h-auto tw-w-[288px] tw-mb-8' src="https://secondchancedogrescue.org/wp-content/uploads/2025/03/Full-Color-Logo-For-Pets.-For-People.-For-Good-1.png" alt="" />
           </div>
         </div>
       </section>
