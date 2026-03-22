@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { getDogById } from '../services/dogApi';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination, EffectCards } from 'swiper/modules';
+import { EffectCards } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/effect-cards';
