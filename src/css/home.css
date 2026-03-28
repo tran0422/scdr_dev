@@ -50,10 +50,27 @@
 
     .desktop-home-adoption-box {
         margin: 3rem 0;
+        padding-top: 0;
+        padding-bottom: 0;
+        padding-left: 1rem;
     }
 
-    .desktop-home-adoption-box:hover {
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    .desktop-home-adoption-h3 {
+        min-height: 100px;
+    }
+
+    .desktop-home-adoption-arrow-container {
+        top: 50%;
+        left: -1rem;
+        transform: translateY(-50%);
+    }
+
+    .desktop-home-adoption-step-1 {
+        display: none;
+    }
+
+    .desktop-home-adoption-arrow {
+        transform: rotate(-90deg);        
     }
 
     .desktop-home-feature-card {
