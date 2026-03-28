@@ -2,7 +2,7 @@ import React from 'react'
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircleArrowRight, faClipboardList, faDog, faHeart, faPhone } from '@fortawesome/free-solid-svg-icons';
+import { faArrowDown, faCircleArrowRight, faClipboardList, faDog, faHeart, faPhone } from '@fortawesome/free-solid-svg-icons';
 import { faPaypal, faSistrix } from '@fortawesome/free-brands-svg-icons';
 import { getRandomDogs } from '../services/dogApi';
 import '../css/home.css';
@@ -117,72 +117,82 @@ const Home = () => {
 
           <div className='desktop-home-adoption-grid'>
             {/*Step 1: browse dog*/}
-            <div className='desktop-home-adoption-box tw-flex tw-flex-col tw-bg-[#9999ff]/70 tw-mt-8 tw-mb-3 tw-rounded-xl tw-relative tw-max-w-xs tw-w-full'>
-              <FontAwesomeIcon icon={faSistrix} className='tw-bg-[#faffff] tw-text-[#cd1c18] tw-p-1 tw-text-3xl tw-m-4' />
-              <h3 className='tw-text-2xl tw-font-bold tw-mx-4'>
-                Browse
-              </h3>
+            <div className='desktop-home-adoption-box tw-flex tw-flex-col tw-mt-8 tw-pb-3 tw-relative tw-max-w-xs tw-w-full'>
+              <div className='desktop-home-adoption-h3 tw-flex tw-items-center'>
+                <FontAwesomeIcon icon={faSistrix} className='tw-bg-[#faffff] tw-text-[#cd1c18] tw-p-1 tw-text-6xl tw-m-1' />
+                <h3 className='tw-text-3xl tw-font-bold tw-mx-4'>
+                  Browse
+                </h3>
+              </div>
               <p className='tw-mx-4 tw-pb-4'>
                 Online or at one of our adoption{' '} <span onClick={handleOpenCal} className='desktop-home-blue-button tw-rounded-full tw-bg-[#0000cc] tw-w-fit tw-px-2 tw-py-1 tw-text-bold tw-text-[#ffff00] tw-cursor-pointer'>events</span>
               </p>
-              <div className='tw-rounded-full tw-bg-[#cd1c18] tw-w-8 tw-h-8 tw-flex tw-justify-center tw-items-center tw-text-bold tw-text-[#faffff] tw-absolute tw-top-0 tw-left-0 tw--translate-x-1/2 tw--translate-y-1/2'>
-                1
+              <div className='desktop-home-adoption-arrow-container desktop-home-adoption-step-1 tw-rounded-full tw-bg-[#cd1c18] tw-w-8 tw-h-8 tw-flex tw-justify-center tw-items-center tw-absolute tw-top-[88%] tw-left-1/2 tw--translate-x-1/2'>
+                <FontAwesomeIcon icon={faArrowDown} className='desktop-home-adoption-arrow tw-text-xl tw-text-[#faffff]'></FontAwesomeIcon>
               </div>
             </div>
 
             {/*Step 2: apply */}
-            <div className='desktop-home-adoption-box tw-flex tw-flex-col tw-bg-[#9999ff]/60 tw-my-6 tw-rounded-xl tw-relative tw-max-w-xs tw-w-full'>
-              <FontAwesomeIcon icon={faClipboardList} className='tw-bg-[#faffff] tw-text-[#cd1c18] tw-p-1 tw-text-3xl tw-m-4' />
-              <h3 className='tw-text-2xl tw-font-bold tw-mx-4'>
-                Apply
-              </h3>
+            <div className='desktop-home-adoption-box tw-flex tw-flex-col tw-py-6 tw-relative tw-max-w-xs tw-w-full'>
+              <div className='desktop-home-adoption-h3 tw-flex tw-items-center'>
+                <FontAwesomeIcon icon={faClipboardList} className='tw-bg-[#faffff] tw-text-[#cd1c18] tw-p-1 tw-text-6xl tw-m-1' />
+                <h3 className='tw-text-3xl tw-font-bold tw-mx-4'>
+                  Apply
+                </h3>
+              </div>
               <p className='tw-mx-4 tw-pb-3'>
                 Apply for the dog you're interested in.
               </p>
-              <div className='tw-rounded-full tw-bg-[#cd1c18] tw-w-8 tw-h-8 tw-flex tw-justify-center tw-items-center tw-text-bold tw-text-[#faffff] tw-absolute tw-top-0 tw-left-0 tw--translate-x-1/2 tw--translate-y-1/2'>
-                2
+              <div className='desktop-home-adoption-arrow-container tw-rounded-full tw-bg-[#cd1c18] tw-w-8 tw-h-8 tw-flex tw-justify-center tw-items-center tw-absolute tw-top-[88%] tw-left-1/2 tw--translate-x-1/2'>
+                <FontAwesomeIcon icon={faArrowDown} className='desktop-home-adoption-arrow tw-text-xl tw-text-[#faffff]'></FontAwesomeIcon>
               </div>
             </div>
 
             {/*Step 3: meet and greet*/}
-            <div className='desktop-home-adoption-box tw-flex tw-flex-col tw-bg-[#9999ff]/50 tw-my-6 tw-rounded-xl tw-relative tw-max-w-xs tw-w-full'>
-              <FontAwesomeIcon icon={faPhone} className='tw-bg-[#faffff] tw-text-[#cd1c18] tw-p-1 tw-text-3xl tw-m-4' />
-              <h3 className='tw-text-2xl tw-font-bold tw-mx-4'>
-                Follow Up (if applicable)
-              </h3>
+            <div className='desktop-home-adoption-box tw-flex tw-flex-col tw-py-6 tw-relative tw-max-w-xs tw-w-full'>
+              <div className='desktop-home-adoption-h3 tw-flex tw-items-center'>
+                <FontAwesomeIcon icon={faPhone} className='tw-bg-[#faffff] tw-text-[#cd1c18] tw-p-1 tw-text-6xl tw-m-4' />
+                <h3 className='tw-text-3xl tw-font-bold tw-mx-4'>
+                  Apps Review
+                </h3>
+              </div>
               <p className='tw-mx-4 tw-pb-3'>
                 We'll contact you to schedule any follow-up.
               </p>
-              <div className='tw-rounded-full tw-bg-[#cd1c18] tw-w-8 tw-h-8 tw-flex tw-justify-center tw-items-center tw-text-bold tw-text-[#faffff] tw-absolute tw-top-0 tw-left-0 tw--translate-x-1/2 tw--translate-y-1/2'>
-                3
+              <div className='desktop-home-adoption-arrow-container tw-rounded-full tw-bg-[#cd1c18] tw-w-8 tw-h-8 tw-flex tw-justify-center tw-items-center tw-absolute tw-top-[88%] tw-left-1/2 tw--translate-x-1/2'>
+                <FontAwesomeIcon icon={faArrowDown} className='desktop-home-adoption-arrow tw-text-xl tw-text-[#faffff]'></FontAwesomeIcon>
               </div>
             </div>
 
             {/*Step 4: approval and paperwork*/}
-            <div className='desktop-home-adoption-box tw-flex tw-flex-col tw-bg-[#9999ff]/40 tw-my-6 tw-rounded-xl tw-relative tw-max-w-xs tw-w-full'>
-              <FontAwesomeIcon icon={faPaypal} className='tw-bg-[#faffff] tw-text-[#cd1c18] tw-p-1 tw-text-3xl tw-m-4' />
-              <h3 className='tw-text-2xl tw-font-bold tw-mx-4'>
-                Approval and Contract
-              </h3>
+            <div className='desktop-home-adoption-box tw-flex tw-flex-col tw-py-6 tw-relative tw-max-w-xs tw-w-full'>
+              <div className='desktop-home-adoption-h3 tw-flex tw-items-center'>
+                <FontAwesomeIcon icon={faPaypal} className='tw-bg-[#faffff] tw-text-[#cd1c18] tw-p-1 tw-text-6xl tw-m-4' />
+                <h3 className='tw-text-3xl tw-font-bold tw-mx-4'>
+                  Approval & Contract
+                </h3>
+              </div>
               <p className='tw-mx-4 tw-pb-3'>
                 Pay the adoption fee and sign the adoption agreement.
               </p>
-              <div className='tw-rounded-full tw-bg-[#cd1c18] tw-w-8 tw-h-8 tw-flex tw-justify-center tw-items-center tw-text-bold tw-text-[#faffff] tw-absolute tw-top-0 tw-left-0 tw--translate-x-1/2 tw--translate-y-1/2'>
-                4
+              <div className='desktop-home-adoption-arrow-container tw-rounded-full tw-bg-[#cd1c18] tw-w-8 tw-h-8 tw-flex tw-justify-center tw-items-center tw-absolute tw-top-[88%] tw-left-1/2 tw--translate-x-1/2'>
+                <FontAwesomeIcon icon={faArrowDown} className='desktop-home-adoption-arrow tw-text-xl tw-text-[#faffff]'></FontAwesomeIcon>
               </div>
             </div>
 
             {/*Step 5: forever*/}
-            <div className='desktop-home-adoption-box tw-flex tw-flex-col tw-bg-[#9999ff]/30 tw-my-2 tw-rounded-xl tw-relative tw-max-w-xs tw-w-full'>
-              <FontAwesomeIcon icon={faDog} className='tw-bg-[#faffff] tw-text-[#cd1c18] tw-p-1 tw-text-3xl tw-m-4' />
-              <h3 className='tw-text-2xl tw-font-bold tw-mx-4'>
-                Forever Home
-              </h3>
+            <div className='desktop-home-adoption-box tw-flex tw-flex-col tw-py-6 tw-relative tw-max-w-xs tw-w-full'>
+              <div className='desktop-home-adoption-h3 tw-flex tw-items-center'>
+                <FontAwesomeIcon icon={faDog} className='tw-bg-[#faffff] tw-text-[#cd1c18] tw-p-1 tw-text-6xl tw-m-4' />
+                <h3 className='tw-text-3xl tw-font-bold tw-mx-4'>
+                  Forever Home
+                </h3>
+              </div>
               <p className='tw-mx-4 tw-pb-3'>
                 Take your new BFF home and start forever together.
               </p>
-              <div className='tw-rounded-full tw-bg-[#cd1c18] tw-w-8 tw-h-8 tw-flex tw-justify-center tw-items-center tw-text-bold tw-text-[#faffff] tw-absolute tw-top-0 tw-left-0 tw--translate-x-1/2 tw--translate-y-1/2'>
-                5
+              <div className='desktop-home-adoption-arrow-container tw-rounded-full tw-bg-[#cd1c18] tw-w-8 tw-h-8 tw-flex tw-justify-center tw-items-center tw-absolute tw-top-[88%] tw-left-1/2 tw--translate-x-1/2'>
+                <FontAwesomeIcon icon={faArrowDown} className='desktop-home-adoption-arrow tw-text-xl tw-text-[#faffff]'></FontAwesomeIcon>
               </div>
             </div>
           </div>
@@ -193,10 +203,6 @@ const Home = () => {
           </Link>
         </div>
       </section>
-
-
-
-
 
       {/* Donation */}
       <section >
