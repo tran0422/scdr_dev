@@ -199,7 +199,7 @@ const Home = () => {
 
           {/* Adoption Process CTA*/}
           <Link to='/dogs' onClick={scrollToTop} className='tw-inline-flex tw-items-center tw-justify-center tw-rounded-full tw-mt-8 tw-mb-4 tw-w-[16rem] tw-py-3 tw-bg-[#cd1c18] tw-text-white hover:tw-bg-[#0000cc] hover:tw-text-[#ffff00]'>
-            Start that journey, Today <FontAwesomeIcon icon={faCircleArrowRight} className='tw-ml-1' />
+            Start that journey today <FontAwesomeIcon icon={faHeart} className='tw-ml-1' />
           </Link>
         </div>
       </section>
