@@ -27,12 +27,10 @@ const Footer = () => {
         {/* Newsletter links */}
         <div className='footer-substack tw-flex tw-flex-col tw-mt-6 tw-mx-3'>
           <p className='tw-text-[#1591ea] tw-text-sm'>RESOURCES</p>
-          <a className='tw-mt-2 tw-px-1 tw-py-1 hover:tw-text-[#cc0000] hover:tw-bg-white' href="https://scdrsd.substack.com" target='_blank' rel='noopener noreferrer'>
-            General Substack
+          <a className='tw-mt-2 tw-px-1 tw-py-1 hover:tw-text-[#cc0000] hover:tw-bg-white' href="https://2ndchancedogrescue.substack.com" target='_blank' rel='noopener noreferrer'>
+            Our Substack
           </a>
-          <a className='tw-mt-1 tw-px-1 tw-py-1 hover:tw-text-[#cc0000] hover:tw-bg-white' href="https://scdrfoster.substack.com" target='_blank' rel='noopener noreferrer'>
-            Foster Substack
-          </a>
+          
         </div>
 
         {/* Social Media */}
