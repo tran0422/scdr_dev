@@ -219,7 +219,7 @@ const Home = () => {
               <Link to='/donate' onClick={scrollToTop} className='desktop-home-hero-button tw-inline-flex tw-items-center tw-justify-center tw-rounded-full tw-mt-8 tw-mb-4 tw-w-[16rem] tw-py-2 tw-bg-[#cd1c18] tw-text-white'>
                 Donate Today <FontAwesomeIcon icon={faHeart} className='tw-ml-1' />
               </Link>
-              <a className='desktop-home-hero-button tw-inline-flex tw-justify-center tw-rounded-full tw-w-[16rem] tw-py-2 tw-border tw-border-black' href="https://scdrsd.substack.com" target='_blank' rel='noopener noreferrer'>
+              <a className='desktop-home-hero-button tw-inline-flex tw-justify-center tw-rounded-full tw-w-[16rem] tw-py-2 tw-border tw-border-black' href="https://2ndchancedogrescue.substack.com" target='_blank' rel='noopener noreferrer'>
                 Follow their journey
               </a>
             </div>
