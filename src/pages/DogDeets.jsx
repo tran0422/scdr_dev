@@ -13,12 +13,9 @@ import '../css/deets.css';
 const scrubText = (txt) => {
     if (!txt) return '';
 
-    return txt.replace(/&nbsp;/g, ' ').replace(/&amp;/g, '&')
-        .replace(/&quot;/g, '"').replace(/&#39;/g, "'")
-        .replace(/&lt;/g, '<').replace(/&gt;/g, '>')
-        .replace(/&rsquo;/g, "'").replace(/&mdash;/g, '—')
-        .replace(/&ndash;/g, '–').replace(/&ldquo;/g, '"')
-        .replace(/&rdquo;/g, '"');
+    const e = document.createElement('textarea');
+    e.innerHTML = txt;
+    return e.value;
 };
 
 const DogDeets = () => {
@@ -91,9 +88,9 @@ const DogDeets = () => {
 
             {/* Qualities */}
             <div className='tw-m-4 tw-flex tw-flex-wrap tw-items-center tw-gap-2'>
-                {dog.attributes.qualities.map((quality, index) =>
+                {dog.attributes.qualities?.length > 0 ? (dog.attributes.qualities.map((quality, index) =>
                     (<p key={index} className='tw-rounded-full tw-py-1 tw-px-3 tw-m-1 tw-bg-[#cd1c18]/10 tw-text-[#cd1c18]'>{quality}</p>)
-                )}
+                )): ( <p></p> )}
 
             </div>
 
