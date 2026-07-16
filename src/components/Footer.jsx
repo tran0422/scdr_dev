@@ -1,8 +1,9 @@
-import React from 'react'
+import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCopyright } from '@fortawesome/free-solid-svg-icons'
-import { faInstagram, faFacebookF, faTiktok } from '@fortawesome/free-brands-svg-icons'
+import { faCopyright } from '@fortawesome/free-solid-svg-icons';
+import { faInstagram, faFacebookF, faTiktok } from '@fortawesome/free-brands-svg-icons';
 import '../css/footer.css';
+import logo from '../assets/SCDR_logo.png';
 
 const Footer = () => {
   const currentYr = new Date().getFullYear();
@@ -15,7 +16,7 @@ const Footer = () => {
         {/* Logo and Name*/}
         <div className='footer-logo tw-flex tw-flex-col tw-mx-3'>
           <div className='tw-flex tw-items-center'>
-            <img className='tw-h-12 tw-w-10 tw-mt-2 tw-mb-1 tw-mr-3' src='https://secondchancedogrescue.org/wp-content/uploads/2020/01/logo.png' alt='' />
+            <img className='tw-h-12 tw-w-10 tw-mt-2 tw-mb-1 tw-mr-3' src={logo} alt='' />
             <div className='tw-flex tw-flex-col tw-mt-2 tw-mb-1'>
               <p className='tw-mt-0'>Second Chance</p>
               <p className='tw-text-[#1591ea] tw-text-sm'>DOG RESCUE</p>
