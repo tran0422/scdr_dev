@@ -19,6 +19,7 @@ export async function onRequest(context) {
 
   if (!response.ok) {
     console.log(response.statusText);
+    console.log(await response.clone().text());
     return response;
   }
 
