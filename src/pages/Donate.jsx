@@ -50,7 +50,7 @@ const Donate = () => {
           <div className='desktop-donate-paypal'>
             <div className='tw-flex tw-flex-col tw-items-center tw-mt-8'>
               <h2 className='tw-text-2xl tw-font-bold tw-text-[#faffff]'>
-                Donate / Adoption Fee
+                Donate
               </h2>
               <div className='tw-mt-4 tw-mb-16' id='paypal-donate'></div>
             </div>
