@@ -2,8 +2,9 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars } from '@fortawesome/free-solid-svg-icons'
+import { faBars } from '@fortawesome/free-solid-svg-icons';
 import '../css/header.css';
+import logo from '../assets/SCDR_logo.png';
 import { navItems } from '../data/navigation';
 
 const Header = () => {
@@ -25,7 +26,7 @@ const Header = () => {
 
         {/*Logo and Name*/}
         <div className='tw-flex tw-items-center tw-py-4'>
-          <img className='tw-h-10 tw-w-8 tw-mt-2 tw-mb-1 tw-mr-3' src='https://secondchancedogrescue.org/wp-content/uploads/2020/01/logo.png' alt='' />
+          <img className='tw-h-10 tw-w-8 tw-mt-2 tw-mb-1 tw-mr-3' src={logo} alt='' />
           <div>
             <p>Second Chance</p>
             <p className='tw-text-xs tw-text-[#878787]'>DOG RESCUE</p>

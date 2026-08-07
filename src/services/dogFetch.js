@@ -24,7 +24,7 @@ export const getAllDogs = async () => {
       for (let attempt = 0; attempt <= Max_tries; attempt++) {
         try {
           console.log(`Attempt ${attempt + 1}`);
-          response = await axios.get("/api/rescuegroup");
+          response = await axios.get("/rescuegroup");
           break;
         } catch (err) {
           console.log("Failed", attempt + 1, err.response?.status, err.code);

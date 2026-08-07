@@ -9,8 +9,11 @@ import '../css/home.css';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import { useModal } from '../components/ModalContext';
+import petsmart from '../assets/PetsmartCharitiesLogo.png';
 import DogCard from '../components/DogCard';
 import SkeletonCard from '../components/SkeletonCard';
+import petfinder from '../assets/Petfinder_Foundation_Logo_hrz_4C_2023.jpg';
+import mrgf from '../assets/mrgf_2025.gif';
 
 const Home = () => {
   const [dogs, setDogs] = useState([]);
@@ -244,13 +247,13 @@ const Home = () => {
               <img className='tw-h-auto tw-w-full tw-block tw-max-w-[200px] tw-object-contain' src="https://cdn.bfldr.com/JPI2AE08/at/3qxt6smjf5ftk3bft5n8xtc/PetcoLoveLogo_ColorRGB.svg?auto=webp&format=svg" alt="" />
             </div>
             <div className='tw-aspect-square tw-grid tw-place-items-center tw-bg-white tw-p-4'>
-              <img className='tw-h-auto tw-w-full tw-block tw-max-w-[200px] tw-object-contain' src="https://secondchancedogrescue.org/wp-content/uploads/2025/03/Grant-Badge-3-1024x1024.gif" alt="" />
+              <img className='tw-h-auto tw-w-full tw-block tw-max-w-[200px] tw-object-contain' src={mrgf} alt="" />
             </div>
             <div className='tw-aspect-square tw-grid tw-place-items-center tw-bg-white tw-p-4'>
-              <img className='tw-h-auto tw-w-full tw-block tw-max-w-[200px] tw-object-contain' src="https://secondchancedogrescue.org/wp-content/uploads/2025/03/Grant-Badge-3-1024x1024.gif" alt="" />
+              <img className='tw-h-auto tw-w-full tw-block tw-max-w-[200px] tw-object-contain' src={petfinder} alt="" />
             </div>
             <div className='tw-aspect-square tw-grid tw-place-items-center tw-bg-white tw-p-4'>
-              <img className='tw-h-auto tw-w-full tw-block tw-max-w-[200px] tw-object-contain' src="https://secondchancedogrescue.org/wp-content/uploads/2025/03/Full-Color-Logo-For-Pets.-For-People.-For-Good-1.png" alt="" />
+              <img className='tw-h-auto tw-w-full tw-block tw-max-w-[200px] tw-object-contain' src={petsmart} alt="" />
             </div>
           </div>
         </div>

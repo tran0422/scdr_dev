@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendar, faCar, faCheckCircle, faSeedling } from '@fortawesome/free-solid-svg-icons';
 import '../css/donate.css';
+import zelle from '../assets/scdr_zelle_qr.png';
 
 const Donate = () => {
   const ppinitialized = useRef(false);
@@ -63,7 +64,7 @@ const Donate = () => {
           <h2 className='tw-text-3xl tw-font-bold tw-text-[#cd1c18]'>
             Have Zelle?
           </h2>
-          <img className='tw-mb-8' src="https://secondchancedogrescue.org/wp-content/uploads/2025/12/scdr_zelle_qr.png" alt="Zelle QR Code"></img>
+          <img className='tw-mb-8' src={zelle} alt="Zelle QR Code"></img>
         </div>
       </div>
 
