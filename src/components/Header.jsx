@@ -47,11 +47,11 @@ const Header = () => {
         </nav>
 
         {/*Mobile Nav*/}
-        <button className='sm:hidden tw-z-20 tw-pr-4' onClick={() => setIsOpen(!isOpen)}>
+        <button className='md:hidden tw-z-20 tw-pr-4' onClick={() => setIsOpen(!isOpen)}>
           <FontAwesomeIcon icon={faBars} className='tw-text-3xl' />
         </button>
 
-        <nav className={`${isOpen ? 'tw-flex' : 'tw-hidden'} tw-absolute tw-top-full tw-w-full tw-left-0 tw-overflow-y-auto tw-flex-col tw-items-start tw-text-3xl tw-bg-[#fffafa] tw-gap-6 tw-pt-8 tw-h-[calc(100vh-64px)] sm:hidden`}>
+        <nav className={`${isOpen ? 'tw-flex' : 'tw-hidden'} tw-absolute tw-top-full tw-w-full tw-left-0 tw-overflow-y-auto tw-flex-col tw-items-start tw-text-3xl tw-bg-[#fffafa] tw-gap-6 tw-pt-8 tw-h-[calc(100vh-64px)] md:hidden`}>
           {navItems.map(({ to, label }) => (
             <NavLink key={to} to={to} end onClick={() => setIsOpen(false)} className={({ isActive }) => `tw-block tw-w-full tw-pl-8 tw-py-4 tw-transition-colors ${isActive ? "tw-bg-[#cd1c18] tw-text-[#fffafa]" : "hover:tw-bg-[#f2f2f2] hover:tw-text-[#cd1c18]"}`}>
               {label}
